@@ -36,10 +36,14 @@ public class ShiroRealm extends AuthenticatingRealm{
 		// 6.根据用户的情况，来构建AuthenticationInfo对象并返回.通常使用的实现类为：SimpleAuthenticationInfo
 		// 以下信息是从数据库中获取的
 		// 1).principal:认证的实体信息. 可以是username，也可以是数据表对应的用户的实体类对象。
-		SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(principal, credentials, realmName)
+		Object principal = username;
+		// 2).credentials:密码.
+		Object credentials = "123456";
+		// 3).realmName:当前realm对象的name. 调用父类的getName()方法即可
+		String realmName = getName();
 		
-		
-		return null;
+		SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(principal , credentials , realmName);
+		return info;
 	}
 
 }
