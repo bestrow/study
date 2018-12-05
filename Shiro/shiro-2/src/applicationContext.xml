@@ -8,7 +8,7 @@
      -->
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
         <property name="cacheManager" ref="cacheManager"/>
-        <property name="realm" ref="jdbcRealm"/>
+        <property name="authenticator" ref="authenticator"></property>
     </bean>
 
     <!--
@@ -19,6 +19,15 @@
         <property name="cacheManagerConfigFile" value="classpath:ehcache.xml"/>
     </bean>
 
+	<bean id="authenticator" class="org.apache.shiro.authc.pam.ModularRealmAuthenticator">
+		<property name="realms">
+			<list>
+				<ref bean="jdbcRealm"/>
+				<ref bean="SecondRealm"/>
+			</list>
+		</property>
+	</bean>
+
     <!--
         3. 配置Realm
         3.1 直接配置实现了org.apache.shiro.realm.Realm接口的bean
@@ -27,6 +36,15 @@
 		<property name="credentialsMatcher">
 			<bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
 				<property name="hashAlgorithmName" value="MD5"></property>
+				<property name="hashIterations" value="1024"></property>
+			</bean>
+		</property>
+    </bean>
+    
+    <bean id="SecondRealm" class="com.libo.shiro.realms.SecondRealm">
+		<property name="credentialsMatcher">
+			<bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+				<property name="hashAlgorithmName" value="SHA1"></property>
 				<property name="hashIterations" value="1024"></property>
 			</bean>
 		</property>
