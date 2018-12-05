@@ -26,6 +26,9 @@
 				<ref bean="SecondRealm"/>
 			</list>
 		</property>
+		<property name="authenticationStrategy">
+			<bean class="org.apache.shiro.authc.pam.AllSuccessfulStrategy"></bean>
+		</property>
 	</bean>
 
     <!--
