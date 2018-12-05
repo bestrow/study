@@ -58,7 +58,7 @@ public class SecondRealm extends AuthenticatingRealm{
 		return info;
 	}
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		String hashAlgorithmName ="SHA1";
 		Object credentials = "123456";
 		Object salt = ByteSource.Util.bytes("admin");;
@@ -66,5 +66,5 @@ public class SecondRealm extends AuthenticatingRealm{
 		
 		Object result = new SimpleHash(hashAlgorithmName, credentials, salt, hashIterations);
 		System.out.println(result);
-	}
+	}*/
 }
