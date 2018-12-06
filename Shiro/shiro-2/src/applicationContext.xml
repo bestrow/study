@@ -16,6 +16,7 @@
 				<ref bean="SecondRealm"/>
 			</list>
 		</property>
+		<property name="rememberMeManager.cookie.maxAge" value="10"></property>
     </bean>
 
     <!--
