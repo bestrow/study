@@ -8,8 +8,13 @@ import org.junit.Test;
 
 public class TestLambda {
 
-	List<Employee> emps = Arrays.asList(new Employee(101, "张三", 18, 9999), new Employee(102, "李四", 59, 6666),
-			new Employee(103, "王五", 28, 3333), new Employee(104, "赵六", 8, 7777), new Employee(105, "田七", 38, 5555));
+	List<Employee> emps = Arrays.asList(
+			new Employee(101, "张三", 18, 9999), 
+			new Employee(102, "李四", 59, 6666),
+			new Employee(103, "王五", 28, 3333),
+			new Employee(104, "赵六", 8, 7777),
+			new Employee(105, "田七", 38, 5555)
+			);
 
 	@Test
 	public void test1() {
