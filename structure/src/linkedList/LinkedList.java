@@ -1,9 +1,5 @@
 package linkedList;
 
-import sun.invoke.empty.Empty;
-
-import javax.crypto.interfaces.PBEKey;
-
 public class LinkedList<E> {
 
     private class Node {

@@ -3,6 +3,7 @@ package queue;
 import array.Array;
 
 public class ArrayQueue<E> implements Queue<E> {
+
     Array<E> array;
 
     public ArrayQueue(int capacity) {
