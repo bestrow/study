@@ -33,15 +33,6 @@ public class LinkedList<E> {
         size = 0;
     }
 
-    public LinkedList(E[] array) {
-        dummyHead = new Node(null, null);
-        for (int i = 0; i < array.length; i++) {
-            dummyHead.next = new Node(array[i]);
-            dummyHead = dummyHead.next;
-        }
-        size = array.length;
-    }
-
     public int getSize() {
         return size;
     }
