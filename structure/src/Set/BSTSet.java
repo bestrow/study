@@ -1,6 +1,6 @@
-package BST;
+package Set;
 
-import Set.Set;
+import BST.BST;
 
 public class BSTSet<E extends Comparable<E>> implements Set<E> {
 
